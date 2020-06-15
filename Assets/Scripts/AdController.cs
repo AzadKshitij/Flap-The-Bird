@@ -8,7 +8,6 @@ public class AdController : MonoBehaviour, IUnityAdsListener
   private string rewarded_video_ad = "rewardedVideo";
   private string banner_ad = "banner";
 
-
   IEnumerator Start()
   {
     Advertisement.AddListener(this);
@@ -21,7 +20,6 @@ public class AdController : MonoBehaviour, IUnityAdsListener
     BOTTOM_CENTER);
     Advertisement.Banner.Show(banner_ad);
   }
-
 
   public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
   {

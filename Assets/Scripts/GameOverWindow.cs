@@ -9,6 +9,7 @@ public class GameOverWindow : MonoBehaviour
   private Text scoreText;
   private Text highscoreText;
 
+  public GameObject inGameScore;
   private void Awake()
   {
     scoreText = transform.Find("scoreText").GetComponent<Text>();
@@ -26,11 +27,13 @@ public class GameOverWindow : MonoBehaviour
   {
     Bird.GetInstance().OnDied += Bird_OnDiad;
     Hide();
+
   }
 
   private void Bird_OnDiad(object sender, System.EventArgs e)
   {
     scoreText.text = Level.GetInstance().GetPipePassed().ToString();
+    inGameScore.SetActive(false);
 
     if (Level.GetInstance().GetPipePassed() >= Score.GetHighScore())
     {

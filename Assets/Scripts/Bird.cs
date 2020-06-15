@@ -9,9 +9,12 @@ public class Bird : MonoBehaviour
   private static Bird instance;
   public event EventHandler OnDied;
   public event EventHandler OnStartPlaying;
+  // public Text jumpText;
   private const float JUMP_AMOUNT = 15f;
   private Rigidbody2D birdRigidbody2D;
   private State state;
+  public GameObject jumpObject;
+
 
   private enum State
   {
@@ -58,6 +61,7 @@ public class Bird : MonoBehaviour
 
   private void Jump()
   {
+    jumpObject.SetActive(false);
     birdRigidbody2D.velocity = Vector2.up * JUMP_AMOUNT;
     SoundManager.PlaySound(SoundManager.Sound.BirdJump);
   }
