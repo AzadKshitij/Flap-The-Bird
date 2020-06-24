@@ -21,7 +21,6 @@ public class charactercustmization : MonoBehaviour
     if (playerIndex < players.Length - 1)
     {
       playerIndex++;
-      Debug.Log(playerIndex + "  Player Index Next");
       imageComponent.sprite = players[playerIndex];
     }
   }
@@ -31,27 +30,8 @@ public class charactercustmization : MonoBehaviour
     if (playerIndex > 0)
     {
       playerIndex = playerIndex - 1;
-      Debug.Log(playerIndex + "  Player Index Previous");
       imageComponent.sprite = players[playerIndex];
     }
   }
 }
 
-
-// Image m_Image;
-///     //Set this in the Inspector
-///     public Sprite m_Sprite;
-///
-///     void Start()
-///     {
-///         //Fetch the Image from the GameObject
-///         m_Image = GetComponent<Image>();
-///     }
-///
-///     void Update()
-///     {
-///         //Press space to change the Sprite of the Image
-///         if (Input.GetKey(KeyCode.Space))
-///         {
-///             m_Image.sprite = m_Sprite;
-///         }

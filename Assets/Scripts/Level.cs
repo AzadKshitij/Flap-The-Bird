@@ -7,9 +7,10 @@ using CodeMonkey.Utils;
 
 public class Level : MonoBehaviour
 {
+  public GameObject jumpObject;
+
   private const float CAMERA_ORTHO_SIZE = 6f;
   private const float PIPE_WIDTH = 10.4f;
-  //   private const float Head_height = 1.875f;
   private const float PIPE_MOVE_SPEED = 3.2f;
 
   private const float PIPE_DESTROY_X_POSITION = -8f;
@@ -91,6 +92,11 @@ public class Level : MonoBehaviour
       HandlePipeSpawn();
       HandleGround();
       HandleClouds();
+    }
+
+    if (Input.GetMouseButtonDown(0))
+    {
+      jumpObject.SetActive(false);
     }
 
   }

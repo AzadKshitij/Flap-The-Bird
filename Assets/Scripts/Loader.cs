@@ -12,6 +12,7 @@ public static class Loader
     LoadingScene,
     MainMenuScene,
     CreditScene,
+    CustmizeScene
   }
 
   private static Scene targetScene;
